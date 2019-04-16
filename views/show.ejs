@@ -1,0 +1,16 @@
+<% include partials/front %>
+<h1><%= temp.name %></h1>
+<img src="<%=temp.image%>"/>
+<p>
+    <%= temp.description %>
+</p>
+<p>
+<a class="btn btn-success" href="/campgrounds/<%=temp._id%>/comments/new">Add new Comments</a>
+</p>
+<% temp.comments.forEach(function(camp){ %>
+<p>
+    <strong><%=camp.author %></strong> - <%= camp.text %>
+</p>
+
+<% }) %>
+
